@@ -1,0 +1,53 @@
+/* Basic formats */
+
+.tiny .bold {
+	font-weight: bold;
+}
+
+.tiny .italic {
+	font-style: italic;
+}
+
+.tiny .underline {
+	text-decoration: underline;
+}
+
+/* Global align classes */
+
+.tiny .left {
+	text-align: inherit;
+}
+
+.tiny .center {
+	text-align: center;
+}
+
+.tiny .right {
+	text-align: right;
+}
+
+.tiny .full {
+	text-align: justify
+}
+
+/* Image and table specific aligns */
+
+.tiny img.left, .tiny table.left {
+	float: left;
+	text-align: inherit;
+}
+
+.tiny img.center, .tiny table.center {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: inherit;
+}
+
+.tiny img.center {
+	display: block;
+}
+
+.tiny img.right, .tiny table.right {
+	float: right;
+	text-align: inherit;
+}

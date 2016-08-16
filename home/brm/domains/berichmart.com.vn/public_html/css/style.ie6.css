@@ -1,0 +1,7 @@
+ul.page li a, ul.page li p{
+	display:inline;
+	color:#FFFFFF;
+}
+ul.page li a.first, ul.page li a.prev, ul.page li a.next, ul.page li a.last{
+	width:2.5em;
+}

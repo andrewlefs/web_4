@@ -1,0 +1,124 @@
+<?php $pq = unserialize($phanquyen['quyen']);// pr($pq);?>
+<h3><center>Nhân viên số : <?php echo $user->name.', tên : ';?><span style="color: red;"><?php echo $user->fullname;?></span> <input type="checkbox" id="checkall"> Check All</center></h3>
+<table width="690" border="0" cellspacing="1" cellpadding="0" class="listquyen">
+    <tr style="text-align: center; font-weight: bold;">
+        <td colspan="4">Hệ thống</td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" style=""><input name="data[users][add]" type="hidden" value="0"><input name="data[users][add]" type="checkbox" value="1" id="pq1" class="check" <?php echo (isset($pq['users']['add'])&&$pq['users']['add']==1)?'checked="checked"':'';?> ><label for="pq1">Thêm nhân viên</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[users][edit]" type="hidden" value="0"><input name="data[users][edit]" type="checkbox" value="1" id="pq2" class="check" <?php echo (isset($pq['users']['edit'])&&$pq['users']['edit']==1)?'checked="checked"':'';?> ><label for="pq2">Sửa nhân viên</label></td>
+        <td align="left" valign="top" style=""><input name="data[users][delete]" type="hidden" value="0"><input name="data[users][delete]" type="checkbox" value="1" id="pq3" class="check" <?php echo (isset($pq['users']['delete'])&&$pq['users']['delete']==1)?'checked="checked"':'';?> ><label for="pq3">Xóa nhân viên</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[users][phanQuyen]" type="hidden" value="0"><input name="data[users][phanQuyen]" type="checkbox" value="1" id="pq4" class="check" <?php echo (isset($pq['users']['phanQuyen'])&&$pq['users']['phanQuyen']==1)?'checked="checked"':'';?> ><label for="pq4">Phân quyền nhân viên</label></td>                                    
+    </tr>
+    <tr style="text-align: center; font-weight: bold;">
+        <td colspan="4">Danh mục</td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" style=""><input name="data[donVi][add]" type="hidden" value="0"><input name="data[donVi][add]" type="checkbox" value="1" id="pq5" class="check" <?php echo (isset($pq['donVi']['add'])&&$pq['donVi']['add']==1)?'checked="checked"':'';?> ><label for="pq5">Thêm đơn vị tính</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[donVi][edit]" type="hidden" value="0"><input name="data[donVi][edit]" type="checkbox" value="1" id="pq6" class="check" <?php echo (isset($pq['donVi']['edit'])&&$pq['donVi']['edit']==1)?'checked="checked"':'';?> ><label for="pq6">Sửa đơn vị tính</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[donVi][delete]" type="hidden" value="0"><input name="data[donVi][delete]" type="checkbox" value="1" id="pq7" class="check" <?php echo (isset($pq['donVi']['delete'])&&$pq['donVi']['delete']==1)?'checked="checked"':'';?> ><label for="pq7">Xóa đơn vị tính</label></td>                    
+    </tr> 
+    <tr>
+        <td align="left" valign="top" style=""><input name="data[cities][add]" type="hidden" value="0"><input name="data[cities][add]" type="checkbox" value="1" id="pq8" class="check" <?php echo (isset($pq['cities']['add'])&&$pq['cities']['add']==1)?'checked="checked"':'';?> ><label for="pq8">Thêm tỉnh/thành phố</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[cities][edit]" type="hidden" value="0"><input name="data[cities][edit]" type="checkbox" value="1" id="pq9" class="check" <?php echo (isset($pq['cities']['edit'])&&$pq['cities']['edit']==1)?'checked="checked"':'';?> ><label for="pq9">Sửa tỉnh/thành phố</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[cities][delete]" type="hidden" value="0"><input name="data[cities][delete]" type="checkbox" value="1" id="pq10" class="check" <?php echo (isset($pq['cities']['delete'])&&$pq['cities']['delete']==1)?'checked="checked"':'';?> ><label for="pq10">Xóa tỉnh/thành phố</label></td>                    
+    </tr>
+    <tr>
+        <td align="left" valign="top" style=""><input name="data[category][add]" type="hidden" value="0"><input name="data[category][add]" type="checkbox" value="1" id="pq11" class="check" <?php echo (isset($pq['category']['add'])&&$pq['category']['add']==1)?'checked="checked"':'';?> ><label for="pq11">Thêm danh mục</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[category][edit]" type="hidden" value="0"><input name="data[category][edit]" type="checkbox" value="1" id="pq12" class="check" <?php echo (isset($pq['category']['edit'])&&$pq['category']['edit']==1)?'checked="checked"':'';?> ><label for="pq12">Sửa danh mục</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[category][delete]" type="hidden" value="0"><input name="data[category][delete]" type="checkbox" value="1" id="pq13" class="check" <?php echo (isset($pq['category']['delete'])&&$pq['category']['delete']==1)?'checked="checked"':'';?> ><label for="pq13">Xóa danh mục</label></td>                    
+    </tr>
+    <tr>
+        <td align="left" valign="top" style=""><input name="data[groupProducts][add]" type="hidden" value="0"><input name="data[groupProducts][add]" type="checkbox" value="1" id="pq14" class="check" <?php echo (isset($pq['groupProducts']['add'])&&$pq['groupProducts']['add']==1)?'checked="checked"':'';?> ><label for="pq14">Thêm nhóm sản phẩm</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[groupProducts][edit]" type="hidden" value="0"><input name="data[groupProducts][edit]" type="checkbox" value="1" id="pq15" class="check" <?php echo (isset($pq['groupProducts']['edit'])&&$pq['groupProducts']['edit']==1)?'checked="checked"':'';?> ><label for="pq14">Sửa nhóm sản phẩm</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[groupProducts][delete]" type="hidden" value="0"><input name="data[groupProducts][delete]" type="checkbox" value="1" id="pq16" class="check" <?php echo (isset($pq['groupProducts']['delete'])&&$pq['groupProducts']['delete']==1)?'checked="checked"':'';?> ><label for="pq16">Xóa nhóm sản phẩm</label></td>                    
+    </tr>
+    <tr>
+        <td align="left" valign="top" style=""><input name="data[productOptions][add]" type="hidden" value="0"><input name="data[productOptions][add]" type="checkbox" value="1" id="pq17" class="check" <?php echo (isset($pq['productOptions']['add'])&&$pq['productOptions']['add']==1)?'checked="checked"':'';?> ><label for="pq17">Thêm trường dữ liệu</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[productOptions][edit]" type="hidden" value="0"><input name="data[productOptions][edit]" type="checkbox" value="1" id="pq18" class="check" <?php echo (isset($pq['productOptions']['edit'])&&$pq['productOptions']['edit']==1)?'checked="checked"':'';?> ><label for="pq18">Sửa trường dữ liệu</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[productOptions][delete]" type="hidden" value="0"><input name="data[productOptions][delete]" type="checkbox" value="1" id="pq19" class="check" <?php echo (isset($pq['productOptions']['delete'])&&$pq['productOptions']['delete']==1)?'checked="checked"':'';?> ><label for="pq19">Xóa trường dữ liệu</label></td>                    
+    </tr>
+    <tr>
+        <td align="left" valign="top" style=""><input name="data[products][add]" type="hidden" value="0"><input name="data[products][add]" type="checkbox" value="1" id="pq20" class="check" <?php echo (isset($pq['products']['add'])&&$pq['products']['add']==1)?'checked="checked"':'';?> ><label for="pq19">Thêm sản phẩm</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[products][edit]" type="hidden" value="0"><input name="data[products][edit]" type="checkbox" value="1" id="pq21" class="check" <?php echo (isset($pq['products']['edit'])&&$pq['products']['edit']==1)?'checked="checked"':'';?> ><label for="pq21">Sửa sản phẩm</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[products][delete]" type="hidden" value="0"><input name="data[products][delete]" type="checkbox" value="1" id="pq22" class="check" <?php echo (isset($pq['products']['delete'])&&$pq['products']['delete']==1)?'checked="checked"':'';?> ><label for="pq22">Xóa sản phẩm</label></td>                    
+    </tr>
+    <tr>
+        <td align="left" valign="top" style=""><input name="data[news][add]" type="hidden" value="0"><input name="data[news][add]" type="checkbox" value="1" id="pq23" class="check" <?php echo (isset($pq['news']['add'])&&$pq['news']['add']==1)?'checked="checked"':'';?> ><label for="pq23">Thêm tin tức</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[news][edit]" type="hidden" value="0"><input name="data[news][edit]" type="checkbox" value="1" id="pq24" class="check" <?php echo (isset($pq['news']['edit'])&&$pq['news']['edit']==1)?'checked="checked"':'';?> ><label for="pq24">Sửa tin tức</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[news][delete]" type="hidden" value="0"><input name="data[news][delete]" type="checkbox" value="1" id="pq25" class="check" <?php echo (isset($pq['news']['delete'])&&$pq['news']['delete']==1)?'checked="checked"':'';?> ><label for="pq25">Xóa tin tức</label></td>                    
+    </tr>
+    <tr>
+        <td align="left" valign="top" style=""><input name="data[adNews][add]" type="hidden" value="0"><input name="data[adNews][add]" type="checkbox" value="1" id="pq26" class="check" <?php echo (isset($pq['adNews']['add'])&&$pq['adNews']['add']==1)?'checked="checked"':'';?> ><label for="pq26">Thêm tin rao vặt</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[adNews][edit]" type="hidden" value="0"><input name="data[adNews][edit]" type="checkbox" value="1" id="pq27" class="check" <?php echo (isset($pq['adNews']['edit'])&&$pq['adNews']['edit']==1)?'checked="checked"':'';?> ><label for="pq27">Sửa tin rao vặt</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[adNews][delete]" type="hidden" value="0"><input name="data[adNews][delete]" type="checkbox" value="1" id="pq28" class="check" <?php echo (isset($pq['adNews']['delete'])&&$pq['adNews']['delete']==1)?'checked="checked"':'';?> ><label for="pq28">Xóa tin rao vặt</label></td>                    
+    </tr>
+    <tr>
+        <td align="left" valign="top" style=""><input name="data[galleries][add]" type="hidden" value="0"><input name="data[galleries][add]" type="checkbox" value="1" id="pq29" class="check" <?php echo (isset($pq['galleries']['add'])&&$pq['galleries']['add']==1)?'checked="checked"':'';?> ><label for="pq29">Thêm thư viện ảnh</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[galleries][edit]" type="hidden" value="0"><input name="data[galleries][edit]" type="checkbox" value="1" id="pq30" class="check" <?php echo (isset($pq['galleries']['edit'])&&$pq['galleries']['edit']==1)?'checked="checked"':'';?> ><label for="pq30">Sửa thư viện ảnh</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[galleries][delete]" type="hidden" value="0"><input name="data[galleries][delete]" type="checkbox" value="1" id="pq31" class="check" <?php echo (isset($pq['galleries']['delete'])&&$pq['galleries']['delete']==1)?'checked="checked"':'';?> ><label for="pq31">Xóa thư viện ảnh</label></td>                    
+    </tr>
+    <tr>
+        <td align="left" valign="top" style=""><input name="data[banners][add]" type="hidden" value="0"><input name="data[banners][add]" type="checkbox" value="1" id="pq32" class="check" <?php echo (isset($pq['banners']['add'])&&$pq['banners']['add']==1)?'checked="checked"':'';?> ><label for="pq32">Thêm banner</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[banners][edit]" type="hidden" value="0"><input name="data[banners][edit]" type="checkbox" value="1" id="pq33" class="check" <?php echo (isset($pq['banners']['edit'])&&$pq['banners']['edit']==1)?'checked="checked"':'';?> ><label for="pq33">Sửa banner</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[banners][delete]" type="hidden" value="0"><input name="data[banners][delete]" type="checkbox" value="1" id="pq34" class="check" <?php echo (isset($pq['banners']['delete'])&&$pq['banners']['delete']==1)?'checked="checked"':'';?> ><label for="pq34">Xóa banner</label></td>                    
+    </tr>
+    <tr>
+        <td align="left" valign="top" style=""><input name="data[memberBuying][index]" type="hidden" value="0"><input name="data[memberBuying][index]" type="checkbox" value="1" id="pq35" class="check" <?php echo (isset($pq['memberBuying']['index'])&&$pq['memberBuying']['index']==1)?'checked="checked"':'';?> ><label for="pq35">Xem đơn hàng</label></td>                 
+        <td align="left" valign="top" style=""><input name="data[memberBuying][delete]" type="hidden" value="0"><input name="data[memberBuying][delete]" type="checkbox" value="1" id="pq36" class="check" <?php echo (isset($pq['memberBuying']['delete'])&&$pq['memberBuying']['delete']==1)?'checked="checked"':'';?> ><label for="pq36">Xóa đơn hàng</label></td>                    
+    </tr>
+    <tr>
+        <td align="left" valign="top" style=""><input name="data[comments][index]" type="hidden" value="0"><input name="data[comments][index]" type="checkbox" value="1" id="pq37" class="check" <?php echo (isset($pq['comments']['index'])&&$pq['comments']['index']==1)?'checked="checked"':'';?> ><label for="pq37">Xem ý kiến KH</label></td>                 
+        <td align="left" valign="top" style=""><input name="data[comments][delete]" type="hidden" value="0"><input name="data[comments][delete]" type="checkbox" value="1" id="pq38" class="check" <?php echo (isset($pq['comments']['delete'])&&$pq['comments']['delete']==1)?'checked="checked"':'';?> ><label for="pq38">Xóa ý kiến KH</label></td>                    
+    </tr>
+    <tr style="text-align: center; font-weight: bold;">
+        <td colspan="4">Chức năng</td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" style=""><input name="data[adminMembers][createPassword]" type="hidden" value="0"><input name="data[adminMembers][createPassword]" type="checkbox" value="1" id="pq39" class="check" <?php echo (isset($pq['adminMembers']['createPassword'])&&$pq['adminMembers']['createPassword']==1)?'checked="checked"':'';?> ><label for="pq39">Cấp lại mật khẩu đăng nhập</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[adminMembers][queryAccount]" type="hidden" value="0"><input name="data[adminMembers][queryAccount]" type="checkbox" value="1" id="pq40" class="check" <?php echo (isset($pq['adminMembers']['queryAccount'])&&$pq['adminMembers']['queryAccount']==1)?'checked="checked"':'';?> ><label for="pq40">Kiểm tra thông tin TV</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[adminMembers][thuaKe]" type="hidden" value="0"><input name="data[adminMembers][thuaKe]" type="checkbox" value="1" id="pq41" class="check" <?php echo (isset($pq['adminMembers']['thuaKe'])&&$pq['adminMembers']['thuaKe']==1)?'checked="checked"':'';?> ><label for="pq41">Thực hiện thừa kế</label></td>      
+        <td align="left" valign="top" style=""><input name="data[adminMembers][blockAccount]" type="hidden" value="0"><input name="data[adminMembers][blockAccount]" type="checkbox" value="1" id="pq42" class="check" <?php echo (isset($pq['adminMembers']['blockAccount'])&&$pq['adminMembers']['blockAccount']==1)?'checked="checked"':'';?> ><label for="pq42">Đóng tài khoản</label></td>                    
+    </tr>
+    <tr>
+        <td align="left" valign="top" style=""><input name="data[adminMembers][updateMoney]" type="hidden" value="0"><input name="data[adminMembers][updateMoney]" type="checkbox" value="1" id="pq43" class="check" <?php echo (isset($pq['adminMembers']['updateMoney'])&&$pq['adminMembers']['updateMoney']==1)?'checked="checked"':'';?> ><label for="pq43">Nạp tiền</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[adminMembers][getMoney]" type="hidden" value="0"><input name="data[adminMembers][getMoney]" type="checkbox" value="1" id="pq44" class="check" <?php echo (isset($pq['adminMembers']['getMoney'])&&$pq['adminMembers']['getMoney']==1)?'checked="checked"':'';?> ><label for="pq44">Rút tiền</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[adminMembers][blockadeAllMoney]" type="hidden" value="0"><input name="data[adminMembers][blockadeAllMoney]" type="checkbox" value="1" id="pq45" class="check" <?php echo (isset($pq['adminMembers']['blockadeAllMoney'])&&$pq['adminMembers']['blockadeAllMoney']==1)?'checked="checked"':'';?> ><label for="pq45">Phong tỏa toàn bộ số dư</label></td>      
+        <td align="left" valign="top" style=""><input name="data[adminMembers][queryAccountCard]" type="hidden" value="0"><input name="data[adminMembers][queryAccountCard]" type="checkbox" value="1" id="pq46" class="check" <?php echo (isset($pq['adminMembers']['queryAccountCard'])&&$pq['adminMembers']['queryAccountCard']==1)?'checked="checked"':'';?> ><label for="pq46">Truy vấn thông tin tài khoản</label></td>                    
+    </tr>
+    <tr>
+        <td align="left" valign="top" style=""><input name="data[adminMembers][setFeeSMS]" type="hidden" value="0"><input name="data[adminMembers][setFeeSMS]" type="checkbox" value="1" id="pq47" class="check" <?php echo (isset($pq['adminMembers']['setFeeSMS'])&&$pq['adminMembers']['setFeeSMS']==1)?'checked="checked"':'';?> ><label for="pq47">Thu phí SMS</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[adminMembers][remakeCard]" type="hidden" value="0"><input name="data[adminMembers][remakeCard]" type="checkbox" value="1" id="pq48" class="check" <?php echo (isset($pq['adminMembers']['remakeCard'])&&$pq['adminMembers']['remakeCard']==1)?'checked="checked"':'';?> ><label for="pq48">Thu phí làm lại thẻ</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[adminMembers][setCheckBonus]" type="hidden" value="0"><input name="data[adminMembers][setCheckBonus]" type="checkbox" value="1" id="pq49" class="check" <?php echo (isset($pq['adminMembers']['setCheckBonus'])&&$pq['adminMembers']['setCheckBonus']==1)?'checked="checked"':'';?> ><label for="pq49">Thiết lập điều kiện tính hoa hông</label></td>      
+        <td align="left" valign="top" style=""><input name="data[adminMembers][browseRose]" type="hidden" value="0"><input name="data[adminMembers][browseRose]" type="checkbox" value="1" id="pq50" class="check" <?php echo (isset($pq['adminMembers']['browseRose'])&&$pq['adminMembers']['browseRose']==1)?'checked="checked"':'';?> ><label for="pq50">Xét duyệt hoa hồng các thành viên</label></td>                    
+    </tr>
+    <tr>
+        <td align="left" valign="top" style=""><input name="data[adminMembers][makeRose]" type="hidden" value="0"><input name="data[adminMembers][makeRose]" type="checkbox" value="1" id="pq51" class="check" <?php echo (isset($pq['adminMembers']['makeRose'])&&$pq['adminMembers']['makeRose']==1)?'checked="checked"':'';?> ><label for="pq51">Lập lệnh thanh toán tiền hoa hồng cho các tv</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[adminMembers][setTax]" type="hidden" value="0"><input name="data[adminMembers][setTax]" type="checkbox" value="1" id="pq52" class="check" <?php echo (isset($pq['adminMembers']['setTax'])&&$pq['adminMembers']['setTax']==1)?'checked="checked"':'';?> ><label for="pq52">Thiết lập mức đóng thuế thu nhập cá nhân cho tv</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[adminMembers][setNoTax]" type="hidden" value="0"><input name="data[adminMembers][setNoTax]" type="checkbox" value="1" id="pq53" class="check" <?php echo (isset($pq['adminMembers']['setNoTax'])&&$pq['adminMembers']['setNoTax']==1)?'checked="checked"':'';?> ><label for="pq53">Loại bỏ các thành viên tự đóng thuế</label></td>                  
+    </tr>
+    <tr style="text-align: center; font-weight: bold;">
+        <td colspan="4">Báo cáo</td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" style=""><input name="data[reportRose][reportImport]" type="hidden" value="0"><input name="data[reportRose][reportImport]" type="checkbox" value="1" id="pq54" class="check" <?php echo (isset($pq['reportRose']['reportImport'])&&$pq['reportRose']['reportImport']==1)?'checked="checked"':'';?> ><label for="pq54">Thu (tiền gửi)</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[reportRose][reportExport]" type="hidden" value="0"><input name="data[reportRose][reportExport]" type="checkbox" value="1" id="pq55" class="check" <?php echo (isset($pq['reportRose']['reportExport'])&&$pq['reportRose']['reportExport']==1)?'checked="checked"':'';?> ><label for="pq55">Chi (tiền rút)</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[reportRose][reportTransfer]" type="hidden" value="0"><input name="data[reportRose][reportTransfer]" type="checkbox" value="1" id="pq56" class="check" <?php echo (isset($pq['reportRose']['reportTransfer'])&&$pq['reportRose']['reportTransfer']==1)?'checked="checked"':'';?> ><label for="pq56">Chuyển khoản</label></td>      
+        <td align="left" valign="top" style=""><input name="data[reportRose][reportFees]" type="hidden" value="0"><input name="data[reportRose][reportFees]" type="checkbox" value="1" id="pq57" class="check" <?php echo (isset($pq['reportRose']['reportFees'])&&$pq['reportRose']['reportFees']==1)?'checked="checked"':'';?> ><label for="pq57">Tiền thu phí</label></td>                    
+    </tr>
+    <tr>
+        <td align="left" valign="top" style=""><input name="data[reportRose][reportRose]" type="hidden" value="0"><input name="data[reportRose][reportRose]" type="checkbox" value="1" id="pq58" class="check" <?php echo (isset($pq['reportRose']['reportRose'])&&$pq['reportRose']['reportRose']==1)?'checked="checked"':'';?> ><label for="pq58">Tiền hoa hồng thành viên</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[reportRose][reportHHTong]" type="hidden" value="0"><input name="data[reportRose][reportHHTong]" type="checkbox" value="1" id="pq59" class="check" <?php echo (isset($pq['reportRose']['reportHHTong'])&&$pq['reportRose']['reportHHTong']==1)?'checked="checked"':'';?> ><label for="pq59">Hoa hồng tổng</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[reportRose][reportTax]" type="hidden" value="0"><input name="data[reportRose][reportTax]" type="checkbox" value="1" id="pq60" class="check" <?php echo (isset($pq['reportRose']['reportTax'])&&$pq['reportRose']['reportTax']==1)?'checked="checked"':'';?> ><label for="pq60">Trích tiền thuế thu nhập cá nhân</label></td>                  
+    </tr>
+    <tr>
+        <td align="left" valign="top" style=""><input name="data[reportRose][reportTotalMoneyMember]" type="hidden" value="0"><input name="data[reportRose][reportTotalMoneyMember]" type="checkbox" value="1" id="pq61" class="check" <?php echo (isset($pq['reportRose']['reportTotalMoneyMember'])&&$pq['reportRose']['reportTotalMoneyMember']==1)?'checked="checked"':'';?> ><label for="pq61">Tổng tiền trong tài khoản TV</label></td>                    
+        <td align="left" valign="top" style=""><input name="data[reportRose][reportCountMemberTitle]" type="hidden" value="0"><input name="data[reportRose][reportCountMemberTitle]" type="checkbox" value="1" id="pq62" class="check" <?php echo (isset($pq['reportRose']['reportCountMemberTitle'])&&$pq['reportRose']['reportCountMemberTitle']==1)?'checked="checked"':'';?> ><label for="pq62">Tổng số thành viên các danh hiêu</label></td> 
+    </tr>
+    <tr>                    
+        <td align="center" valign="top"><label>
+            <?php echo CHtml::submitButton('Thiết lập',array('class'=>'button')); ?>
+        </label></td>
+    </tr>
+</table>
+<input type="hidden" name="user_id" id="user_id" value="<?php echo $user->id;?>">

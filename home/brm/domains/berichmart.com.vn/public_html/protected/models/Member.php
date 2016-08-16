@@ -1,0 +1,201 @@
+<?php
+
+/**
+ * This is the model class for table "members".
+ *
+ * The followings are the available columns in table 'users':
+ * @property integer $id
+ * @property string $password
+ * @property string $name
+ * @property string $fullname
+ * @property string $email
+ * @property string $yahoo
+ * @property string $birthday
+ * @property string $sex
+ * @property string $avatar
+ * @property string $created
+ * @property string $modified
+ * @property string $skype
+ * @property integer $status
+ */                        
+class Member extends CActiveRecord
+{
+    public $captcha;
+
+    /**
+	 * Returns the static model of the specified AR class.
+	 * @param string $className active record class name.
+	 * @return User the static model class
+	 */
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
+
+	/**
+	 * @return string the associated database table name
+	 */
+	public function tableName()
+	{
+		return 'members';
+	}
+
+	/**
+	 * @return array validation rules for model attributes.
+	 */
+        public function is_exist($attribute,$params){
+            if(!empty($this->$attribute)){
+                $member = $this->find($attribute.'="'.$this->$attribute.'"');
+                $x=$this->attributeLabels();
+                if($member && $member->id != $this->id)                    
+                    $this->addError($attribute, $x[$attribute].' đã tồn tại !');
+            }
+        }
+        public function checkperson($attribute,$params){
+            if(!empty($this->$attribute)){ 
+                $member = $this->find('name="'.$this->$attribute.'"');
+                if(!$member)
+                    $this->addError($attribute, 'Thành viên này không tồn tại. Vui lòng nhập lại tên thành viên.');
+            }
+        }
+        
+        public function checkcaptcha($attribute,$params){
+            $captcha=Yii::app()->controller->createAction("captcha");
+            $code = $captcha->verifyCode;
+            if(trim($this->$attribute)!='' && trim($this->$attribute)!=$code)
+                $this->addError($attribute, 'Mã số an toàn không chính xác');
+        }
+        
+        // kiem tra xem nguoi gioi thieu 2 da co du 5 con cap 1 chua
+        public function checkperson2($attribute,$params){
+            if(!empty($this->$attribute)){ 
+                $member = $this->find('name="'.$this->$attribute.'"');
+                if(!empty($member)){
+                    $childs = $this->findAll('parents='.$member->id);
+                    if(count($childs)>=5)
+                        $this->addError($attribute, 'Thành viên này đã có đủ 5 thành viên con cấp 1. Vui lòng nhập tên thành viên khác');
+                }
+            }
+        }
+        
+        public function rules()
+	{
+		// NOTE: you should only define rules for those attributes that
+		// will receive user inputs.
+		return array(
+			array('name,captcha,password,fullname,email,birthday,city_id,sex,created, modified,address,cmnd,date_create,place_create,phone,person1,person2,address_cmnd', 'required','message'=>'{attribute} không được để trống'),
+			array('status, vip, level,parents,lft,rgt,city_id,sex', 'numerical', 'integerOnly'=>true),			
+                        array('name','numerical','message'=>'{attribute} phải là số'),
+                        array('name', 'length', 'max'=>200,'min'=>4),
+                        array('name,cmnd','is_exist','message'=>'{attribute} đã tồn tại !'),                        
+                        array('person1,person2','checkperson'),
+                        array('person2','checkperson2'),
+                        array('password','length','min'=>6),
+                        array('captcha', 'checkcaptcha'),
+                       // array('captcha', 'captcha', 'allowEmpty'=>CCaptcha::checkRequirements()),
+                        array('avatar','file','types'=>'jpg, gif, png','maxSize'=>50*1024,'allowEmpty'=>true),
+                        array('email','email','message'=>'Địa chỉ email không hợp lệ'),
+                        array('vip, parents,lft,rgt','numerical','allowEmpty'=>true),
+                        array('avatar','length','allowEmpty'=>true),
+			// The following rule is used by search().
+			// Please remove those attributes that should not be searched.
+			array('id,vip,fullname,email,city, parents, name, lft,level, created, modified, rgt, status', 'safe', 'on'=>'search'),
+		);
+	}
+
+	/**
+	 * @return array relational rules.
+	 */
+	public function relations()
+	{
+		// NOTE: you may need to adjust the relation name and the related
+		// class name for the relations automatically generated below.
+		return array('MemberBonus'=>array(self::HAS_MANY,'MemberBonus','submember_id'),
+                    'MemberBuying'=>array(self::HAS_MANY,'MemberBuying','member_id'),
+                    'City'=>array(self::BELONGS_TO,'City','place_create'),
+                    'CardAccount'=>array(self::HAS_ONE,'CardAccount','member_id'),
+		);
+	}
+
+	/**
+	 * @return array customized attribute labels (name=>label)
+	 */
+	public function attributeLabels()
+	{
+		return array(
+			'id' => 'ID',
+			'parents' => 'Thành viên giới thiệu',
+			'name' => 'Tên thành viên',
+			'title' => 'Danh hiệu',
+			'vip' => 'Vip',
+			'level' => 'Level',
+			'lft' => 'Trái',
+			'rgt' => 'Phải',
+			'created' => 'Created',
+			'modified' => 'Modified',
+                        'password'=>'Mật khẩu',
+                        'fullname'=>'Họ tên',
+                        'email'=>'Email',
+                        'sex'=>'Giới tính',
+                        'birthday'=>'Ngày sinh',
+                        'city_id'=>'city',
+                        'yahoo'=>'yahoo',
+                        'skype'=>'skype',
+                        'avatar'=>'Avatar',
+                        'person1'=>'Người giới thiệu 1',
+                        'person2'=>'Người giới thiệu 2',
+                        'address'=>'Địa chỉ',
+                        'cmnd'=>'CMND',
+                        'place_create'=>'Nơi cấp',
+                        'phone'=>'Số điện thoại',
+                        'address_cmnd'=>'Địa chỉ theo CMND',
+		);
+	}
+
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+	 */
+	public function search()
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('id',$this->id);
+		$criteria->compare('parents',$this->parents,true);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('title',$this->title);
+		$criteria->compare('level',$this->level,true);
+		$criteria->compare('vip',$this->vip);
+		$criteria->compare('lft',$this->lft,true);
+		$criteria->compare('rgt',$this->rgt,true);
+		$criteria->compare('created',$this->created,true);
+		$criteria->compare('modified',$this->modified,true);
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}     
+        
+       function getTreeMember($condition,$level=0){
+           $members= $this->findAll($condition); 
+           $data='<ul '.(($level==0)? 'id="mixed"':'').'>';
+             foreach($members as $member){
+                 $childs = $this->findAll('parents ='.$member->id);
+                 if($member->title==0)
+                     $class='tvkn';
+                 else
+                     $class='tvct';
+                 if($level==0);
+                    $class = 'member_root';
+                 if(count($childs)>0)
+                     $data .='<li><span class="'.$class.'">'.$member->fullname.'</span>'.$this->getTreeMember('parents ='.$member->id,1).'</li>';
+                 else
+                     $data .='<li><span class="'.$class.'">'.$member->fullname.'</span></li>';
+             }
+           $data.='</ul>';
+           return $data;
+       }
+        
+}

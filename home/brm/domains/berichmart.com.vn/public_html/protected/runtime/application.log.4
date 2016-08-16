@@ -1,0 +1,11 @@
+2013/12/02 18:05:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "source.php".' in /home/brm/domains/berichmart.com.vn/public_html/framework/web/CController.php:484
+Stack trace:
+#0 /home/brm/domains/berichmart.com.vn/public_html/framework/web/CController.php(271): CController->missingAction('source.php')
+#1 /home/brm/domains/berichmart.com.vn/public_html/framework/web/CWebApplication.php(276): CController->run('source.php')
+#2 /home/brm/domains/berichmart.com.vn/public_html/framework/web/CWebApplication.php(135): CWebApplication->runController('member/account/...')
+#3 /home/brm/domains/berichmart.com.vn/public_html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/brm/domains/berichmart.com.vn/public_html/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/member/account/source.php
+HTTP_REFERER=http://berichmart.com.vn/member/account/registerCard
+---

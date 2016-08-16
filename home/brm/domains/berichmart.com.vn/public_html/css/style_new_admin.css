@@ -1,0 +1,27 @@
+/* CSS Document */
+*{margin:0px; padding:0px; font-size:13px; font-family:"Times New Roman", Times, serif; color:#000;}
+body{ background-image:none !important; background-color:#e3efff !important;}
+#ad_wraper{ margin:auto; width:1282; overflow:hidden; border-top:2px solid #7db4e5}
+#ad_header{ width:100%;}
+.ad_topheader1{width:100%; background-color:#fff; height:28px;}
+.ad_topheader2{width:100%; background-color:#bfdbff; height:23px;}
+.ad_boxmenu{width:100%; /*height:90px; max-height:120px;*/ overflow: hidden; padding-bottom: 2px; border:1px solid #9ab8d9; background-color:#d2e4f2;}
+.ad_boxmenu .ad_box {float:left; /*height:84px; max-height: 114px;*/ margin-top:2px; margin-left:2px; border:1px solid #9ab8d9; -moz-border-radius: 5px; border-radius: 5px;  -webkit-border-radius: 5px; overflow:hidden;}
+.ad_boxmenu .ad_main_box{ /*height:70px; max-height: 100px;*/ background-image:url(../images/bg_main_box.jpg); overflow:hidden; background-repeat:repeat-x; width:100%; }
+.ad_boxmenu .ad_bottom_box{ height:14px; background-color:#bfd6ee; width:100%; overflow:hidden; text-align:center; line-height:14px; font-weight:bold;}
+.ad_main_box ul{ list-style-type:none; margin-top:20px; margin-right:5px;}
+.ad_main_box ul li{float:left; padding-bottom: 5px; margin-left:10px; width:auto !important; max-width:70px;}
+.ad_main_box  a{text-decoration:none;}
+.ad_main_box  a:hover{text-decoration:underline; color:red;}
+#ad_maincontent{ width:100%; padding-left: 30px; padding-top: 20px; overflow: hidden;}
+.ad_topheader2 ul{list-style-type:none;}
+.ad_topheader2 ul li{ float:left; line-height:19px; margin-left:5px; background-color:#e6edf6; height:19px; margin-top:3px; padding:0px 10px;border:1px solid #9ab8d9; border-bottom:none; border-radius: 5px 5px 0 0;-webkit-border-radius: 5px 5px 0 0;-moz-border-radius: 5px 5px 0 0; overflow:hidden;}
+.ad_topheader2 ul li a{text-decoration:none;}
+.member-logout{float: right; line-height: 23px; margin-right: 20px; font-weight: bold;}
+.member-logout span{ margin-left: 5px;}
+.menuactive{}
+.menuactive a{ color: red !important; font-weight: bold;}
+.nhanvien{float: left; margin-right: 50px;}
+.nhanvien #nhanvien{min-width: 200px; padding-left: 14px;}
+.nhanvien #nhanvien option{padding-bottom: 5px; padding-top: 5px;}
+.listquyen label{ margin-left: 5px;}

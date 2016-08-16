@@ -1,0 +1,189 @@
+@charset "utf-8";
+/* CSS Document */
+
+.chitiet-raovat{}
+.chitiet-raovat .category ul li {
+    font-weight: bold;
+    padding: 8px 5px 8px 10px;
+    text-align: left;
+}
+.chitiet-raovat .category ul li a{color:#444;}
+.chitiet-raovat .category ul li a:hover{color:#006FC4;}
+.chitiet-raovat .category ul li img{vertical-align:middle; width:15px; padding-right:5px;}
+
+.chitiet-raovat .member-info{width:300px; float:right; border:solid 1px #ccc; border-radius:5px; margin-bottom:8px;}
+.chitiet-raovat .member-info ul li{width:auto; height:auto;}
+.chitiet-raovat .product-info{float:left; width:500px;}
+.chitiet-raovat  .title-news{font-weight:bold; font-size:16px; padding:10px 0 20px 0; color:#006FC4;}
+.chitiet-raovat .product-info .image img{width:200px; height:auto; float:left; padding:10px 30px; margin-right:20px;}
+.chitiet-raovat .right{width:232px; float:right;}
+.chitiet-raovat .location-category{padding-left:0; background:none; border-bottom:solid 1px #ddd; font-size:13px;}
+.chitiet-raovat .location-category a{}
+.chitiet-raovat .tbl-info-product td{padding-right:15px;}
+.chitiet-raovat .tbl-info-product td.title {
+    font-weight: bold;
+    line-height: 26px;
+    text-align: right;
+}
+.red{color:#c00000;}
+.chitiet-raovat .member-info .title-box{padding-left:10px; color:#e16013;}
+.chitiet-raovat .member-info table{margin:5px;}
+.chitiet-raovat .member-info table td{vertical-align:top; line-height:22px;}
+.chitiet-raovat .member-info table ul li{text-align:left; padding:0 !important;}
+.chitiet-raovat .member-info table ul li a{text-decoration:underline;}
+.chitiet-raovat .member-info table td.name{width:80px; text-align:right; padding-right:5px;}
+
+
+.tab {
+    float: left;
+    line-height: 20px;
+    margin-top: 15px;
+}
+.tab a.selected {
+    background: none repeat scroll 0 0 white !important;
+    color: #E16013 !important;
+}
+.contentTab {
+    background: none repeat scroll 0 0 white;
+    border: 1px solid #CCCCCC;
+    clear: both;
+    left: 0;
+    padding: 20px;
+    top: 20px;
+    z-index: -1;
+}
+.tab a.titleTab {
+    background: url("../images/onpixel-gray.png") repeat-x scroll left bottom #EEEEEE;
+    border:solid 1px #ccc;
+	border-bottom:none;
+    color: black;
+    cursor: pointer;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    list-style: none outside none;
+    margin-bottom: -1px;
+    margin-right: 2px;
+    padding: 7px 30px;
+}
+.tab .data-table th {
+    background-color: #F4F4F4;
+    border: 1px solid #DDDDDD;
+    padding-right: 10px;
+    text-align: right;
+    width: 180px;
+}
+.tab .data-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+.tab .data-table td {
+    border: 1px solid #DDDDDD;
+    padding: 5px;
+}
+.tab .tbl-comment {
+    width: 100%;
+}
+.tab .tbl-comment .capcha img {
+    float: left;
+}
+.tab .tbl-comment td.capcha img.img_f5 {
+    margin-left: 10px;
+    margin-top: 15px;
+}
+.tab .tbl-comment textarea {
+    border: 1px solid #DDDDDD;
+    height: 150px;
+    width: 70%;
+}
+.tab .tbl-comment input {
+    border: 1px solid #DDDDDD;
+}
+.tab .tbl-comment th {
+    width: 100px;
+}
+.tab .tbl-comment a.post {
+    background-color: #DDDDDD;
+    display: block;
+    float: left;
+    margin-top: 10px;
+    padding: 5px 15px;
+}
+.tab .tbl-comment a.post:hover {
+    background: none repeat scroll 0 0 #4F6018;
+    color: white;
+    font-weight: bold;
+}
+
+
+
+.content-right .related-products ul li {
+    float: left;
+    font-size: 11px;
+    margin: 10px 12px;
+    width: 90px;
+	height:100px;
+}
+/*.content-right .related-products ul li .img{height:60px;}
+.content-right .related-products ul li img{max-width:70px; max-height:60px;}
+.content-right .related-products ul li .price{font-weight:normal; padding-top:2px;}*/
+
+.chitiet-raovat .content-right .cung-chuyen-muc{height:auto !important; max-height:none; margin-top:8px;}
+.chitiet-raovat .content-right .cung-chuyen-muc .title {
+    background: url("../images/bullet_2.gif") no-repeat scroll left 12px transparent;
+    float: left;
+    line-height: 20px;
+    margin-left: 8px;
+    padding: 6px 30px 6px 15px;
+    text-align: left;
+    width:590px;
+}
+.chitiet-raovat .content-right .cung-chuyen-muc .title a:hover{text-decoration:underline;}
+.chitiet-raovat .content-right .cung-chuyen-muc .city{float:left; width:120px;text-align:left;}
+.chitiet-raovat .content-right .cung-chuyen-muc .time{float:left;width:100px;text-align:left;}
+.chitiet-raovat .content-right .cung-chuyen-muc .image{float:right;width:30px;text-align:center; padding-top:3px; margin-right:3px;}
+.chitiet-raovat .content-right .cung-chuyen-muc .image img{width:30px;}
+.chitiet-raovat .content-right .cung-chuyen-muc ul li {
+    clear: both;
+    float: none;
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    padding:0;
+	line-height:32px;
+    width: 100%;
+	
+}
+.chitiet-raovat .content-right .cung-chuyen-muc ul li.color{background-color:#D9ECFF;}
+.chitiet-raovat .content-right .cung-chuyen-muc ul li.head {
+	float: left;
+    font-weight: bold;
+	background:none;
+}
+.chitiet-raovat .content-right .cung-chuyen-muc ul li.head .title{background:none;}
+.chitiet-raovat .content-right .cung-chuyen-muc .box-right{max-height:none;}
+.chitiet-raovat .content-right .cung-chuyen-muc .filter{border:solid 1px #ccc; margin-top:5px; padding:8px;}
+.chitiet-raovat .content-right .cung-chuyen-muc .filter .sub-menu {
+    border-top: 1px dotted #CCCCCC;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.chitiet-raovat .content-right .cung-chuyen-muc .filter .sub-menu a{margin-right:15px; color:#c48900;}
+.chitiet-raovat .content-right .cung-chuyen-muc .filter .sub-menu a:hover{text-decoration:underline;}
+.chitiet-raovat .content-right .cung-chuyen-muc .filter .list-menu a{font-weight:bold; padding:3px 10px; margin-right:8px; color:#006fc4;}
+.chitiet-raovat .content-right .cung-chuyen-muc .filter .list-menu a.current{background:#006fc4; color:white;}
+.chitiet-raovat .content-right .cung-chuyen-muc .filter .list-menu a:hover{background:#006fc4; color:white;}
+.chitiet-raovat .content-right .cung-chuyen-muc .box-common{border:none;}
+
+
+.chitiet-raovat .tab .list-comment li img{float:left; padding-right:8px; margin-top:5px;}
+.chitiet-raovat .tab .list-comment li{padding:10px 0;overflow:hidden; border-bottom:dotted 1px #ccc;}
+.chitiet-raovat .tab .list-comment li .user-name{float:left; font-weight:bold;}
+.chitiet-raovat .tab .list-comment li button{font-size:12px; float:right; marign-top:8px;}
+.chitiet-raovat .tab .list-comment li ul{margin-left:30px; margin-top:10px; clear:both;}
+.chitiet-raovat .tab .list-comment li ul li{border:none;}
+.chitiet-raovat .tab .list-comment h3{font-size:15px;}
+.chitiet-raovat .tab .list-comment h3 span{color:#4F6018; font-weight:normal;}
+.chitiet-raovat .tinraokhac{clear:both; margin-top:10px;}
+.chitiet-raovat .tinraokhac .title-box{color:#E16013 !important;}
